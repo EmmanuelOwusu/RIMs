@@ -63,7 +63,7 @@ parser.add_argument('--tied', default=False, action='store_true',
                     help='tie the word embedding and softmax weights')
 parser.add_argument('--seed', type=int, default=1111,
                     help='random seed')
-parser.add_argument('--cuda', action='store_true',
+parser.add_argument('--cuda', action= "True" #'store_true',
                     help='use CUDA')
 parser.add_argument('--cudnn', action='store_true',
                     help='use cudnn optimized version. i.e. use RNN instead of RNNCell with for loop')
