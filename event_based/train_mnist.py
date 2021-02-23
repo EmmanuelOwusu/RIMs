@@ -77,7 +77,7 @@ parser.add_argument('--resume', type=int, default=None,
                     help='if specified with the 1-indexed global epoch, loads the checkpoint and resumes training')
 parser.add_argument('--algo', type=str, choices=('blocks', 'lstm','mixed'))
 parser.add_argument('--num_blocks', nargs='+', type=int, default=[6])
-parser.add_argument('--nhid', nargs='+', type=int, default=[300])
+parser.add_argument('--nhid', nargs='+', type=int, default=[600])
 parser.add_argument('--topk', nargs='+', type=int, default=[4])
 parser.add_argument('--block_dilation', nargs='+', type=int, default=-1)
 parser.add_argument('--layer_dilation', nargs='+', type=int, default=-1)
