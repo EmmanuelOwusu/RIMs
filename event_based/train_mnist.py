@@ -104,7 +104,7 @@ parser.add_argument('--cutoffs', nargs="*", type=int, default=[10000, 50000, 100
                          'optimal values are based on word frequencey and vocabulary size of the dataset.')
 
 # experiment name for this run
-parser.add_argument('--name', type=str, default=None,
+parser.add_argument('--name', type=str, default="Emma",
                     help='name for this experiment. generates folder with the name if specified.')
 
 args = parser.parse_args()
