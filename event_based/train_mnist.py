@@ -63,7 +63,7 @@ parser.add_argument('--tied', default=False, action='store_true',
                     help='tie the word embedding and softmax weights')
 parser.add_argument('--seed', type=int, default=1111,
                     help='random seed')
-parser.add_argument('--cuda', action= True, #'store_true',
+parser.add_argument('--cuda', action= 'store_true',
                     help='use CUDA')
 parser.add_argument('--cudnn', action='store_true',
                     help='use cudnn optimized version. i.e. use RNN instead of RNNCell with for loop')
@@ -75,7 +75,7 @@ parser.add_argument('--onnx-export', type=str, default='',
                     help='path to export the final model in onnx format')
 parser.add_argument('--resume', type=int, default=None,
                     help='if specified with the 1-indexed global epoch, loads the checkpoint and resumes training')
-parser.add_argument('--algo', type=str,  choices= ('blocks', 'lstm','mixed'))
+parser.add_argument('--algo', type=str, default= "lstm") #choices= ('blocks', 'lstm','mixed'))
 parser.add_argument('--num_blocks', nargs='+', type=int, default=[6])
 parser.add_argument('--nhid', nargs='+', type=int, default=[600])
 parser.add_argument('--topk', nargs='+', type=int, default=[4])
@@ -104,7 +104,7 @@ parser.add_argument('--cutoffs', nargs="*", type=int, default=[10000, 50000, 100
                          'optimal values are based on word frequencey and vocabulary size of the dataset.')
 
 # experiment name for this run
-parser.add_argument('--name', type=str, default="Emma",
+parser.add_argument('--name', type=str, default="None",
                     help='name for this experiment. generates folder with the name if specified.')
 
 args = parser.parse_args()
