@@ -63,9 +63,9 @@ parser.add_argument('--tied', default=False, action='store_true',
                     help='tie the word embedding and softmax weights')
 parser.add_argument('--seed', type=int, default=1111,
                     help='random seed')
-parser.add_argument('--cuda', action= 'store_true',
+parser.add_argument('--cuda', default = True, #action= 'store_true',
                     help='use CUDA')
-parser.add_argument('--cudnn', action='store_true',
+parser.add_argument('--cudnn', default = True, #action='store_true',
                     help='use cudnn optimized version. i.e. use RNN instead of RNNCell with for loop')
 parser.add_argument('--log-interval', type=int, default=100, metavar='N',
                     help='report interval')
@@ -75,7 +75,7 @@ parser.add_argument('--onnx-export', type=str, default='',
                     help='path to export the final model in onnx format')
 parser.add_argument('--resume', type=int, default=None,
                     help='if specified with the 1-indexed global epoch, loads the checkpoint and resumes training')
-parser.add_argument('--algo', type=str, default= "lstm") #choices= ('blocks', 'lstm','mixed'))
+parser.add_argument('--algo', type=str, default= "blocks") #choices= ('blocks', 'lstm','mixed'))
 parser.add_argument('--num_blocks', nargs='+', type=int, default=[6])
 parser.add_argument('--nhid', nargs='+', type=int, default=[600])
 parser.add_argument('--topk', nargs='+', type=int, default=[4])
